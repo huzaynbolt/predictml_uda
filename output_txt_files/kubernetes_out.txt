@@ -1,0 +1,36 @@
+NAME                             READY   STATUS    RESTARTS   AGE
+prediction-ml-86db968d8d-8rnck   1/1     Running   0          2m33s
+
+huzaynbolt-pc@DESKTOP-T812VLJ MINGW64 /d/Documents#/Projects/pers/udacity-devops-nanodegree/Solutions/DevOps_Microservices/project-ml-microservice-kubernetes (master)
+$ kubectl port-forward pod/prediction-ml-86db968d8d-8rnck --address 0.0.0.0 8000:80
+Forwarding from 0.0.0.0:8000 -> 80
+
+huzaynbolt-pc@DESKTOP-T812VLJ MINGW64 /d/Documents#/Projects/pers/udacity-devops-nanodegree/Solutions/DevOps_Microservices/project-ml-microservice-kubernetes (master)
+$ kubectl port-forward pod/prediction-ml-86db968d8d-8rnck --address 0.0.0.0 8000:80
+Forwarding from 0.0.0.0:8000 -> 80
+Handling connection for 8000
+Handling connection for 8000
+
+
+[2022-09-02 22:32:13,001] INFO in app: JSON payload:
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2022-09-02 22:32:13,067] INFO in app: Inference payload DataFrame:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-09-02 22:32:13,116] INFO in app: Scaling Payload:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-09-02 22:32:13,132] INFO in app: prediction:
+[20.35373177134412]
+127.0.0.1 - - [02/Sep/2022 22:32:13] "POST /predict HTTP/1.1" 200 -
+[2022-09-02 22:32:49,986] INFO in app: JSON payload:
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2022-09-02 22:32:50,076] INFO in app: Inference payload DataFrame:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-09-02 22:32:50,166] INFO in app: Scaling Payload:
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-09-02 22:32:50,179] INFO in app: prediction:
+[20.35373177134412]
+127.0.0.1 - - [02/Sep/2022 22:32:50] "POST /predict HTTP/1.1" 200 -
